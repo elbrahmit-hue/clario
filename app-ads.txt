@@ -1,0 +1,43 @@
+To get Google AdMob to successfully crawl your `app-ads.txt` file from GitHub Pages, follow these exact steps to set up your repository and paste the correct link into App Store Connect.
+
+### Step 1: Set up the files on GitHub
+
+For AdMob to find the file, your GitHub Pages repository must serve it at the absolute root domain.
+
+1. Go to your main GitHub Pages repository (`etabra098.github.io`).
+2. Create a new file named exactly **`app-ads.txt`** (make sure it's lowercase and uses `app-ads`, not just `ads`).
+3. Paste your AdMob line inside it:
+```text
+
+```
+
+
+
+google.com, pub-1682551170494568, DIRECT, f08c47fec0942fa0
+
+```
+4. Make sure your empty `index.html` file is also in this same root folder so GitHub Pages builds properly.
+
+### Step 2: Test your links in a browser
+Before heading to App Store Connect, open a new browser tab and test these two URLs to ensure they load perfectly:
+* **`[https://etabra098.github.io/](https://etabra098.github.io/)`** (Should show your empty/blank page)
+* **`[https://etabra098.github.io/app-ads.txt](https://etabra098.github.io/app-ads.txt)`** (Should display your text line)
+
+---
+
+### Step 3: Paste the link into App Store Connect
+
+Google AdMob automatically strips subfolders and paths when it crawls your site. It looks directly at the root domain listed in your store presence.
+
+1. Log into **App Store Connect**.
+2. Go to **Apps** and select your application.
+3. On the left sidebar, click on your current app version under **App Store** (e.g., *1.0.0 Prepare for Submission*).
+4. Scroll down to the **App Information** or **Contact Information** section.
+5. In the **Marketing URL** field, paste your root domain link:
+   > `[https://etabra098.github.io/](https://etabra098.github.io/)`
+6. *(Optional)* It is highly recommended to also paste `[https://etabra098.github.io/](https://etabra098.github.io/)` into the **Support URL** field if you don't have a separate support page yet, as Apple requires this field to be filled out.
+7. Click **Save** in the top right corner.
+
+Once your app update is submitted and approved, Google AdMob's crawler will visit `[https://etabra098.github.io/](https://etabra098.github.io/)`, automatically append `/app-ads.txt` to it, and verify your publisher status. It usually takes 24 hours for the status to turn green in your AdMob dashboard after the crawler runs.
+
+```
